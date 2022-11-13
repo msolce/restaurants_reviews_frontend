@@ -134,7 +134,7 @@ export default function RestaurantList(props) {
           <select onChange={onChangeSearchCuisine}>
              {cuisines.map(cuisine => {
                return (
-                 <option value={cuisine}> {cuisine.substring(0, 20)} </option>
+                 <option value={cuisine} key={cuisine}> {cuisine.substring(0, 20)} </option>
                )
              })}
           </select>
@@ -154,7 +154,7 @@ export default function RestaurantList(props) {
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
-            <div className="col-lg-4 pb-1">
+            <div className="col-lg-4 pb-1"  key={restaurant._id}>
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">{restaurant.name}</h5>
